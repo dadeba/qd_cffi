@@ -9,8 +9,8 @@ The package name in Ubuntu is "libqd-dev".
 # build
 make
 
-## Requirement: python CFFI packaage
-The package name in Ubuntu is "python3-cffi".
+## Requirements: python CFFI packaage, numpy
+The package name of "CFFI" in Ubuntu is "python3-cffi".
 
 # usage
 see "test.py
