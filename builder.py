@@ -8,6 +8,7 @@ void c_dd_sub(const double *a, const double *b, double *c);
 void c_dd_mul(const double *a, const double *b, double *c);
 void c_dd_div(const double *a, const double *b, double *c);
 void c_dd_rand(double *a);
+void call_srand();
 """)
 
 ffibuilder.set_source(
@@ -16,8 +17,10 @@ ffibuilder.set_source(
     #include <qd/c_qd.h>
     #include <qd/c_dd.h>
     #include <qd/fpu.h>
+    #include "call_srand.h"
 """,
-    libraries=["qd"],
+    sources=['call_srand.c'],
+    libraries=["qd", "stdc++"],
     include_dirs=[],
     library_dirs=[]
 )

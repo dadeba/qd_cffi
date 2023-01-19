@@ -29,6 +29,9 @@ def dd_rand(a):
     z = ffi.cast("double *", a.ctypes.data)
     lib.c_dd_rand(z)
 
+def call_srand():
+    lib.call_srand()
+
 class DD:
     def __init__(self, v = [0.0, 0.0]):
         self.v = np.array(v, dtype=np.float64)
