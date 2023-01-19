@@ -10,11 +10,17 @@ void c_dd_div(const double *a, const double *b, double *c);
 void c_dd_rand(double *a);
 """)
 
-ffibuilder.set_source("_qd", """
+ffibuilder.set_source(
+    module_name = "_qd",
+    source="""
     #include <qd/c_qd.h>
     #include <qd/c_dd.h>
     #include <qd/fpu.h>
-""", libraries=["qd"])
+""",
+    libraries=["qd"],
+    include_dirs=[],
+    library_dirs=[]
+)
 
 if __name__ == "__main__":
     ffibuilder.compile(verbose=True)
