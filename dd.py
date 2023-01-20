@@ -30,6 +30,11 @@ def dd_rand(a):
 def call_srand():
     lib.call_srand()
 
+def call_binary72_to_dd(a, c):
+    x = ffi.cast("const uint64_t [2]", a.ctypes.data)
+    z = ffi.cast("double *", c.v.ctypes.data)
+    lib.binary72_to_dd(x, z)
+    
 class DD:
     def __init__(self, v = [0.0, 0.0]):
         self.v = np.array(v, dtype=np.float64)
@@ -59,6 +64,6 @@ class DD:
 
     def rand(self):
         dd_rand(self)
-
+        
     def __str__(self):
         return self.v.__str__()
