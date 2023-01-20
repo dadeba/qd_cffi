@@ -35,7 +35,7 @@ void c_dd_atanh(const double *a, double *b);
 void c_dd_sincos(const double *a, double *s, double *c);
 void c_dd_sincosh(const double *a, double *s, double *c);
 void c_dd_rand(double *a);
-
+void c_dd_write(const double *a);
 void call_srand();
 void binary72_to_dd(const uint64_t a[], double *res);
 """)

@@ -31,3 +31,4 @@ dd.call_binary72_to_dd(xx, qq)
 
 print(qq)
 
+dd.write_dd(qq)

@@ -1,6 +1,10 @@
 import numpy as np
 from _qd import ffi, lib
 
+def write_dd(a):
+    x = ffi.cast("const double *", a.v.ctypes.data)
+    lib.c_dd_write(x)
+    
 def cast_dd(a, b, c):
     x = ffi.cast("const double *", a.v.ctypes.data)
     y = ffi.cast("const double *", b.v.ctypes.data)
